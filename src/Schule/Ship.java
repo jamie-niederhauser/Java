@@ -6,6 +6,7 @@ public class Ship {
     private int number;
     private String name;
     private int time;
+    private Person owner;
 
     public Ship(int number, String name) {
         this.number = number;
@@ -29,12 +30,21 @@ public class Ship {
     }
 
     public void race() {
-        time = random.nextInt(600) + 300;
+        int min = 300;
+        int max = 600;
+        time = random.nextInt(min,max);
     }
 
     public int getTime() {
         return time;
     }
 
+    public Person getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Person owner) {
+        this.owner = owner;
+    }
 }
 

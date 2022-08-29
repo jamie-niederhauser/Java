@@ -35,12 +35,22 @@ public class Competition {
     public void printResult() {
         System.out.println("Wettkampf" + this.name);
 
+
         for (Ship s : this.ships){
             if (s != null){
-                System.out.println("Schiff Nr: " + s.getNumber() + "  |Schiff Name: " + s.getName() + "  |Zeit: " + s.getTime());
+                String ownerOutput = " Besitzer: ";
+
+                Person owner = s.getOwner();
+                if (owner != null) {
+                    ownerOutput += owner.getFirstname() + " " + owner.getLastname();
+                }
+
+                System.out.println(
+                        "Schiff Nr: " + s.getNumber() + " Name: " + s.getName() + ownerOutput + " Zeit: " + s.getTime());
             }
+        }
         }
     }
 
-}
+
 
